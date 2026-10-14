@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f6f8fb" />
+  <meta name="description" content="CoinScope — a responsive crypto markets dashboard prototype with live CoinGecko data, watchlists, asset charts, and search." />
+  <title>CoinScope — Crypto Market Dashboard</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <div class="app-shell" id="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-inner">
+        <div class="brand"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span><div class="brand-name">coin<span>scope</span><small>MARKET INTELLIGENCE</small></div></div>
+        <div class="nav-kicker">WORKSPACE</div>
+        <nav class="side-nav" aria-label="Main navigation">
+          <button class="nav-link is-active" data-nav="overview"><span class="nav-icon" data-icon="dashboard"></span><span>Overview</span><span class="nav-indicator"></span></button>
+          <button class="nav-link" data-nav="markets"><span class="nav-icon" data-icon="chart"></span><span>Markets</span></button>
+          <button class="nav-link" data-nav="watchlist"><span class="nav-icon" data-icon="star"></span><span>Watchlist</span><span id="watch-count" class="nav-count">0</span></button>
+        </nav>
+        <div class="nav-kicker tools-kicker">TOOLS</div>
+        <nav class="side-nav" aria-label="Tools">
+          <button class="nav-link" data-nav="converter"><span class="nav-icon" data-icon="calculator"></span><span>Trade preview</span></button>
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="sidebar-tip"><span class="tip-icon">✦</span><strong>Stay on top of the market.</strong><p>Explore assets, follow favorites, and make informed decisions.</p><span class="tip-caption">DEMO WORKSPACE</span></div>
+          <div class="sidebar-footer"><span class="online-dot"></span> CoinScope Prototype <span class="sidebar-version">v1.0</span></div>
+        </div>
+      </div>
+    </aside>
+    <div class="backdrop" id="backdrop"></div>
+    <div class="content-shell">
+      <header class="topbar">
+        <div class="topbar-left"><button class="icon-button mobile-only" id="menu-button" aria-label="Open menu"><span data-icon="menu"></span></button><span class="topbar-page" id="breadcrumb">Workspace <span>/</span> Overview</span></div>
+        <div class="topbar-actions">
+          <div class="search-wrap"><span class="search-icon" data-icon="search"></span><input id="global-search" type="search" placeholder="Search coins..." aria-label="Search cryptocurrencies" autocomplete="off"/><span class="search-shortcut">/</span></div>
+          <button class="icon-button" id="theme-button" title="Toggle theme" aria-label="Toggle dark mode"><span data-icon="moon"></span></button>
+          <span class="avatar" aria-label="Demo user">CS</span>
+        </div>
+      </header>
+      <main class="main-content" id="main-content">
+        <section class="page-header"><div><p class="eyebrow">WELCOME TO COINSCOPE</p><div class="heading-row"><h1 id="view-heading">Market overview</h1><span class="heading-sparkle">✳</span></div><p class="page-subtitle" id="view-subtitle">Your front-row seat to the crypto market, all in one place.</p></div><div class="header-right"><span class="market-status" id="market-status"><span class="status-dot"></span><span>Connecting...</span></span><button class="refresh-btn" id="refresh-btn"><span data-icon="refresh"></span><span>Refresh</span></button></div></section>
+        <div class="info-notice" id="info-notice" hidden><span data-icon="info"></span><span id="info-message"></span><button id="notice-close" aria-label="Dismiss notice">×</button></div>
+        <div id="view-content"></div>
+        <footer class="main-footer"><span>© 2026 CoinScope. Portfolio demonstration — not a trading platform.</span><span>Market data by <a href="https://www.coingecko.com/" target="_blank" rel="noopener noreferrer">CoinGecko ↗</a></span></footer>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
